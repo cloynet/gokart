@@ -257,7 +257,7 @@ function Header() {
 
                   <li>
                     <Link
-                      href='#'
+                      href='/contact'
                       className="
                     relative 
                     transition
