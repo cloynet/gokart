@@ -2,15 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
-import {
-  Card,
-  CardAction,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
+import { Card, CardContent, CardTitle } from "@/components/ui/card";
 import { motion } from "framer-motion";
 import {
   FacebookLogo,
@@ -45,7 +37,7 @@ function ContactClientPage() {
 
   return (
     <div className='md:mt-40'>
-      <div className='max-w-6xl mx-auto p-5 md:p-10 grid grid-cols-1 md:grid-cols-2 gap-10 text-white '>
+      <div className='max-w-6xl mx-auto p-5 md:p-10 grid grid-cols-1 md:grid-cols-2 gap-10 text-white items-stretch'>
         <motion.div
           variants={fadeInLeft}
           initial='hidden'
@@ -54,19 +46,19 @@ function ContactClientPage() {
           transition={{ duration: 0.8, ease: "easeOut" }}
           className='flex'
         >
-          <Card className='w-full bg-black/10 text-white flex flex-col p-6 items-center justify-center ransition duration-300 hover:scale-[1.02]'>
+          <Card className='w-full h-full bg-black/10 text-white flex flex-col p-6 items-center justify-center transition duration-300 hover:scale-[1.02] rounded-lg'>
             <CardTitle
               className={`${bebas.className} text-red-500 text-4xl text-center animate-pulse`}
             >
               Adresimiz
             </CardTitle>
 
-            <CardContent className='text-lg leading-relaxed font-bold'>
-              <p className={`${inter.className}`}>Eski Garage Go-Kart</p>
-              <p className={`${inter.className}`}>
-                Örnek Mahallesi, Örnek Caddesi No: 555{" "}
-              </p>
-              <p className={`${inter.className}`}>Türkiye</p>
+            <CardContent
+              className={`${inter.className} text-lg leading-relaxed font-bold text-center`}
+            >
+              <p>Eski Garage Go-Kart</p>
+              <p>Örnek Mahallesi, Örnek Caddesi No: 555</p>
+              <p>Türkiye</p>
             </CardContent>
           </Card>
         </motion.div>
@@ -79,52 +71,60 @@ function ContactClientPage() {
           transition={{ duration: 0.8, ease: "easeOut" }}
           className='flex'
         >
-          <Card className='w-full bg-black/10 text-white flex flex-col p-6 items-center justify-center ransition duration-300 hover:scale-[1.02]'>
+          <Card className='w-full h-full bg-black/10 text-white flex flex-col p-6 items-center justify-center transition duration-300 hover:scale-[1.02] rounded-lg'>
             <CardTitle
               className={`${bebas.className} text-red-500 text-4xl text-center animate-pulse`}
             >
               İletişim
             </CardTitle>
-            <CardContent className='flex flex-col gap-3'>
+            <CardContent className='flex flex-col gap-3 flex-grow'>
               <p className='max-w-lg text-lg flex gap-5 items-center'>
-                <WhatsappLogo className='text-4xl text-red-800' />{" "}
+                <WhatsappLogo
+                  className='text-4xl text-red-800'
+                  aria-label='Whatsapp'
+                  role='img'
+                />
                 <Link
                   href='tel:+905555555555'
-                  className={`${inter.className} font-bold rounded-lg p-3 bg-red-700`}
+                  className={`${inter.className} text-sm font-bold rounded-lg p-2 bg-red-700 hover:bg-red-800 transition block min-w-[200px] text-center`}
                 >
                   +90 555 555 55 55
                 </Link>
               </p>
 
-              <p className='text-lg flex gap-5 items-center'>
-                <Envelope className='text-4xl text-red-800' />{" "}
+              <p className='max-w-lg text-lg flex gap-5 items-center'>
+                <Envelope
+                  className='text-4xl text-red-800'
+                  aria-label='E-posta'
+                  role='img'
+                />
                 <Link
                   href='mailto:ornek@hotmail.com'
-                  className={`${inter.className} font-bold rounded-lg p-3 bg-red-700`}
+                  className={`${inter.className} text-sm font-bold rounded-lg p-2 bg-red-700 hover:bg-red-800 transition block min-w-[200px] text-center`}
                 >
                   ornek@hotmail.com
                 </Link>
               </p>
 
-              <h3 className={`${bebas.className} text-red-500 text-2xl`}>
+              <h3 className={`${bebas.className} text-red-500 text-2xl mt-6`}>
                 Sosyal Medya
               </h3>
               <ul className='flex gap-5 text-4xl items-center'>
                 <li>
-                  <Link href='#'>
-                    <FacebookLogo className='text-red-800' />
+                  <Link href='#' aria-label='Facebook'>
+                    <FacebookLogo className='text-red-800 hover:text-red-600 transition' />
                   </Link>
                 </li>
 
                 <li>
-                  <Link href='#'>
-                    <InstagramLogo className='text-red-800' />
+                  <Link href='#' aria-label='Instagram'>
+                    <InstagramLogo className='text-red-800 hover:text-red-600 transition' />
                   </Link>
                 </li>
 
                 <li>
-                  <Link href='#'>
-                    <TwitterLogo className='text-red-800' />
+                  <Link href='#' aria-label='Twitter'>
+                    <TwitterLogo className='text-red-800 hover:text-red-600 transition' />
                   </Link>
                 </li>
               </ul>

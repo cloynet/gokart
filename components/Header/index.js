@@ -5,9 +5,7 @@ import { Menu, X } from "lucide-react";
 
 import Image from "next/image";
 import logo from "@/assets/images/logos/logo2.jpeg";
-import image1 from "@/assets/images/electric/a1.jpg";
-import image2 from "@/assets/images/electric/y3.jpg";
-import image3 from "@/assets/images/electric/c2.jpg";
+
 import Link from "next/link";
 
 const orbitron = Orbitron({
@@ -20,67 +18,35 @@ const bebas = Bebas_Neue({
   weight: ["400"],
 });
 
-const slides = [
-  {
-    image: image1.src,
-    text: "Adrenalin burada şarj olur⚡",
-  },
-  {
-    image: image2.src,
-    text: "Go-kart deneyimi burada başlar",
-  },
-  {
-    image: image3.src,
-    text: "Minik pilotlar için büyük heyecan!",
-  },
-];
-
 function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
 
-  const [currentSlide, setCurrentSlide] = useState(0);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % slides.length);
-    }, 5000);
-
-    return () => clearInterval(interval);
-  }, []);
+  const offMenu = () => {
+    setMenuOpen(false);
+  };
 
   return (
-    <div className='relative min-h-[300px] md:min-h-[600px] text-white'>
-      <div
-        style={{
-          backgroundImage: `url(${slides[currentSlide].image})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          transition: "background-image 1s ease-in-out",
-        }}
-        className='absolute inset-0 z-0 bg-black opacity-100'
-      >
-        <div className='flex p-5 md:justify-between items-center md:py-5 md:px-30 shadow-2xl backdrop-blur-md border border-black/20 '>
-          <div className='hidden md:block'>
-            <Link href={"/#"}>
-              <Image
-                src={logo}
-                alt='logo'
-                width={100}
-                height={100}
-                className='rounded-xl'
-              />
-            </Link>
-          </div>
+    <div className='text-white p-5 md:p-10 sticky top-0 z-50 backdrop-blur-md bg-black/5'>
+      <div className='hidden md:flex justify-between '>
+        {/* DESKTOP MENU */}
+        <Link href={"/#"}>
+          <Image
+            src={logo}
+            alt='logo'
+            width={80}
+            height={80}
+            className='rounded-xl hidden md:block'
+          />
+        </Link>
 
-          {/* DESKTOP MENU */}
-          <nav className='hidden md:flex'>
-            <ul
-              className={`flex  md:space-x-10 items-center ${bebas.className} md:text-2xl`}
-            >
-              <li>
-                <Link
-                  href='/#'
-                  className="
+        <nav className='flex items-center justify-between'>
+          <ul
+            className={`flex  md:space-x-10 items-center ${bebas.className} md:text-2xl`}
+          >
+            <li>
+              <Link
+                href='/#'
+                className="
                     relative 
                     transition
                     hover:text-red-500
@@ -95,15 +61,15 @@ function Header() {
                     after:transition-all
                     after:duration-300
                     "
-                >
-                  Anasayfa
-                </Link>
-              </li>
+              >
+                Anasayfa
+              </Link>
+            </li>
 
-              <li>
-                <Link
-                  href='/services'
-                  className="
+            <li>
+              <Link
+                href='/services'
+                className="
                     relative 
                     transition
                     hover:text-red-500
@@ -118,15 +84,15 @@ function Header() {
                     after:transition-all
                     after:duration-300
                     "
-                >
-                  Hizmetler
-                </Link>
-              </li>
+              >
+                Hizmetler
+              </Link>
+            </li>
 
-              <li>
-                <Link
-                  href={"/about"}
-                  className="
+            <li>
+              <Link
+                href={"/about"}
+                className="
                     relative 
                     transition
                     hover:text-red-500
@@ -141,15 +107,15 @@ function Header() {
                     after:transition-all
                     after:duration-300
                     "
-                >
-                  Hakkımızda
-                </Link>
-              </li>
+              >
+                Hakkımızda
+              </Link>
+            </li>
 
-              <li>
-                <Link
-                  href='/contact'
-                  className="
+            <li>
+              <Link
+                href='/contact'
+                className="
                     relative 
                     transition
                     hover:text-red-500
@@ -164,32 +130,44 @@ function Header() {
                     after:transition-all
                     after:duration-300
                     "
-                >
-                  İletişim
-                </Link>
-              </li>
-            </ul>
-          </nav>
+              >
+                İletişim
+              </Link>
+            </li>
+          </ul>
+        </nav>
+      </div>
 
-          {/* MOBILE MENU */}
-          <div className=' flex items-center'>
-            <button
-              className='md:hidden text-left items-center'
-              onClick={() => setMenuOpen(!menuOpen)}
-              aria-label='Toggle menu'
-            >
-              {menuOpen ? <X size={24} /> : <Menu size={24} />}
-            </button>
+      <div className='flex items-center justify-between'>
+        <Link href={"/#"}>
+          <Image
+            src={logo}
+            alt='logo'
+            width={40}
+            height={40}
+            className='rounded-sm md:hidden'
+          />
+        </Link>
 
-            {menuOpen && (
-              <nav className='absolute top-16 left-0 w-full bg-black/80 px-6 py-4 md:hidden z-50'>
-                <ul
-                  className={`flex flex-col space-y-4 text-lg ${bebas.className}`}
-                >
-                  <li>
-                    <Link
-                      href='/#'
-                      className="
+        {/* MOBILE MENU */}
+        <nav className='flex items-center'>
+          <button
+            className='md:hidden items-center'
+            onClick={() => setMenuOpen(!menuOpen)}
+            aria-label='Toggle menu'
+          >
+            {menuOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+
+          {menuOpen && (
+            <nav className='absolute top-16 left-0 w-full bg-black/80 px-6 py-4 md:hidden z-50'>
+              <ul
+                className={`flex flex-col space-y-4 text-lg ${bebas.className}`}
+              >
+                <li>
+                  <Link
+                    href='/#'
+                    className="
                     relative 
                     transition
                     hover:text-red-500
@@ -204,15 +182,16 @@ function Header() {
                     after:transition-all
                     after:duration-300
                     "
-                    >
-                      Anasayfa
-                    </Link>
-                  </li>
+                    onClick={offMenu}
+                  >
+                    Anasayfa
+                  </Link>
+                </li>
 
-                  <li>
-                    <Link
-                      href='/services'
-                      className="
+                <li>
+                  <Link
+                    href='/services'
+                    className="
                     relative 
                     transition
                     hover:text-red-500
@@ -227,15 +206,16 @@ function Header() {
                     after:transition-all
                     after:duration-300
                     "
-                    >
-                      Hizmetler
-                    </Link>
-                  </li>
+                    onClick={offMenu}
+                  >
+                    Hizmetler
+                  </Link>
+                </li>
 
-                  <li>
-                    <Link
-                      href='/about'
-                      className="
+                <li>
+                  <Link
+                    href='/about'
+                    className="
                     relative 
                     transition
                     hover:text-red-500
@@ -250,15 +230,23 @@ function Header() {
                     after:transition-all
                     after:duration-300
                     "
-                    >
-                      Hakkımızda
-                    </Link>
-                  </li>
+                    onClick={offMenu}
+                  >
+                    Hakkımızda
+                  </Link>
+                </li>
 
+<<<<<<< HEAD
                   <li>
                     <Link
                       href='/contact'
                       className="
+=======
+                <li>
+                  <Link
+                    href='/contact'
+                    className="
+>>>>>>> b6775cc (e)
                     relative 
                     transition
                     hover:text-red-500
@@ -273,23 +261,15 @@ function Header() {
                     after:transition-all
                     after:duration-300
                     "
-                    >
-                      İletişim
-                    </Link>
-                  </li>
-                </ul>
-              </nav>
-            )}
-          </div>
-        </div>
-
-        <div className='absolute bottom-3 left-5'>
-          <div>
-            <h2 className={`${orbitron.className} text-lg md:text-5xl`}>
-              {slides[currentSlide].text}
-            </h2>
-          </div>
-        </div>
+                    onClick={offMenu}
+                  >
+                    İletişim
+                  </Link>
+                </li>
+              </ul>
+            </nav>
+          )}
+        </nav>
       </div>
     </div>
   );

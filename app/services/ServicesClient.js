@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import React from "react";
 import Image from "next/image";
-import kartImage from "@/assets/images/electric/y1.jpeg";
+import image from "@/assets/images/electric/y1.jpeg";
 
 import { Bebas_Neue, Inter } from "next/font/google";
 
@@ -19,7 +19,7 @@ const inter = Inter({
 
 function ServicesClientsPage() {
   return (
-    <div className='max-w-6xl mx-auto p-6 space-y-16'>
+    <div className='max-w-6xl mx-auto p-6 space-y-20'>
       <motion.div
         initial={{ opacity: 0, x: 100 }}
         whileInView={{ opacity: 1, x: 0 }}
@@ -27,7 +27,7 @@ function ServicesClientsPage() {
         viewport={{ once: true, amount: 0.3 }}
         className='grid grid-cols-1 md:grid-cols-3 gap-6 items-center'
       >
-        <div className='space-y-3'>
+        <div className='space-y-4 md:pr-6'>
           <h2
             className={`${bebas.className} text-4xl font-semibold text-red-500`}
           >
@@ -42,13 +42,13 @@ function ServicesClientsPage() {
           </p>
         </div>
 
-        <div className='md:col-span-2 flex justify-center'>
+        <div className='md:col-span-2 flex justify-center relative h-64 md:h-96 rounded-lg overflow-hidden shadow-lg'>
           <Image
-            src={kartImage}
+            src={image}
             alt='Elektrikli Go Kart'
-            width={600}
-            height={400}
-            className='rounded-lg shadow-lg'
+            fill
+            style={{ objectFit: "cover" }}
+            priority
           />
         </div>
       </motion.div>
@@ -60,7 +60,7 @@ function ServicesClientsPage() {
         viewport={{ once: true, amount: 0.3 }}
         className='grid grid-cols-1 md:grid-cols-3 gap-6 items-center'
       >
-        <div className='space-y-3'>
+        <div className='space-y-4 md:pr-6'>
           <h2
             className={`${bebas.className} text-4xl font-semibold text-red-500`}
           >
@@ -76,7 +76,7 @@ function ServicesClientsPage() {
 
         <div className='md:col-span-2 flex justify-center'>
           <h3
-            className={`${bebas.className} text-7xl font-bold text-white animate-pulse`}
+            className={`${bebas.className} text-5xl md:text-7xl font-bold text-white animate-pulse`}
           >
             Takım Ruhunu Zirveye Taşıyın!
           </h3>
@@ -90,7 +90,7 @@ function ServicesClientsPage() {
         viewport={{ once: true, amount: 0.3 }}
         className='grid grid-cols-1 md:grid-cols-3 gap-6 items-center'
       >
-        <div className='space-y-3'>
+        <div className='space-y-4 md:pr-6'>
           <h2
             className={`${bebas.className} text-4xl font-semibold text-red-500`}
           >
@@ -104,13 +104,13 @@ function ServicesClientsPage() {
           </p>
         </div>
 
-        <div className='md:col-span-2 flex justify-center'>
+        <div className='md:col-span-2 flex justify-center relative h-64 md:h-96 rounded-lg overflow-hidden shadow-lg'>
           <Image
-            src={kartImage}
+            src={image}
             alt='Çocuk Go Kart'
-            width={600}
-            height={400}
-            className='rounded-lg shadow-lg'
+            fill
+            style={{ objectFit: "cover" }}
+            priority
           />
         </div>
       </motion.div>
