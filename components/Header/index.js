@@ -1,6 +1,6 @@
 "use client";
 import { Orbitron, Bebas_Neue } from "next/font/google";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Menu, X } from "lucide-react";
 
 import Image from "next/image";
@@ -236,17 +236,10 @@ function Header() {
                   </Link>
                 </li>
 
-<<<<<<< HEAD
-                  <li>
-                    <Link
-                      href='/contact'
-                      className="
-=======
                 <li>
                   <Link
                     href='/contact'
                     className="
->>>>>>> b6775cc (e)
                     relative 
                     transition
                     hover:text-red-500
