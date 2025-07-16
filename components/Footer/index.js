@@ -4,6 +4,7 @@ import React from "react";
 import Image from "next/image";
 import logo from "@/assets/images/logos/logo1.jpeg";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 import { Bebas_Neue, Inter } from "next/font/google";
 
@@ -48,7 +49,7 @@ function Footer() {
         variants={container}
         initial='hidden'
         whileInView='visible'
-        viewport={{ once: true }}
+        viewport={{ once: false }}
       >
         <motion.div variants={item}>
           <Image
@@ -69,24 +70,24 @@ function Footer() {
           </h4>
           <ul className='space-y-2'>
             <li>
-              <a href='/' className='hover:text-white transition'>
+              <Link href='/' className='hover:text-white transition'>
                 Anasayfa
-              </a>
+              </Link>
             </li>
             <li>
-              <a href='/services' className='hover:text-white transition'>
+              <Link href='/services' className='hover:text-white transition'>
                 Hizmetler
-              </a>
+              </Link>
             </li>
             <li>
-              <a href='/about' className='hover:text-white transition'>
+              <Link href='/about' className='hover:text-white transition'>
                 Hakkımızda
-              </a>
+              </Link>
             </li>
             <li>
-              <a href='/contact' className='hover:text-white transition'>
+              <Link href='/contact' className='hover:text-white transition'>
                 İletişim
-              </a>
+              </Link>
             </li>
           </ul>
         </motion.div>

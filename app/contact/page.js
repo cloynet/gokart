@@ -1,11 +1,15 @@
-import React from 'react'
+import React from "react";
 
-import ContactClientPage from './ContactClient'
+import ContactClientPage from "./ContactClient";
+import ContactForm from "./ContactForm";
 
 function ContactPage() {
   return (
-    <div> <ContactClientPage/> </div>
-  )
+    <div>
+      <ContactClientPage />
+      <ContactForm />
+    </div>
+  );
 }
 
-export default ContactPage
+export default ContactPage;
