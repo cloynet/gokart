@@ -1,1 +1,1 @@
-https://gokart-nu.vercel.app
+https://gokart-three.vercel.app
