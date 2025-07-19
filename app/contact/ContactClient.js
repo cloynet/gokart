@@ -2,7 +2,6 @@
 
 import React from "react";
 import Link from "next/link";
-import { Card, CardContent, CardTitle } from "@/components/ui/card";
 import { motion } from "framer-motion";
 import {
   FacebookLogo,
@@ -10,129 +9,106 @@ import {
   WhatsappLogo,
   TwitterLogo,
   Envelope,
+  AddressBookIcon,
 } from "@phosphor-icons/react";
 
 import { Bebas_Neue, Inter } from "next/font/google";
 
-const bebas = Bebas_Neue({
-  subsets: ["latin"],
-  weight: ["400"],
-});
-
-const inter = Inter({
-  subsets: ["latin"],
-  weight: ["400", "700"],
-});
+const bebas = Bebas_Neue({ subsets: ["latin"], weight: ["400"] });
+const inter = Inter({ subsets: ["latin"], weight: ["400", "700"] });
 
 function ContactClientPage() {
-  const fadeInLeft = {
-    hidden: { opacity: 0, x: -100 },
-    visible: { opacity: 1, x: 0 },
-  };
-
-  const fadeInRight = {
-    hidden: { opacity: 0, x: 100 },
-    visible: { opacity: 1, x: 0 },
-  };
-
   return (
-    <div className='md:mt-40'>
-      <div className='max-w-6xl mx-auto p-5 md:p-10 grid grid-cols-1 md:grid-cols-2 gap-10 text-white items-stretch'>
+    <section className='w-full p-6 md:p-16 rounded-xl bg-red-700/20 '>
+      <div className='flex flex-col md:flex-row items-center justify-center gap-10'>
         <motion.div
-          variants={fadeInLeft}
-          initial='hidden'
-          whileInView='visible'
-          viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          className='flex'
+          initial={{ opacity: 0, x: -50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className='w-[300px] md:w-[500px] h-[300px] md:h-[400px] rounded-xl overflow-hidden shadow-md'
         >
-          <Card className='w-full h-full bg-black/10 text-white flex flex-col p-6 items-center justify-center transition duration-300 hover:scale-[1.02] rounded-lg'>
-            <CardTitle
-              className={`${bebas.className} text-red-500 text-4xl text-center animate-pulse`}
-            >
-              Adresimiz
-            </CardTitle>
-
-            <CardContent
-              className={`${inter.className} text-lg leading-relaxed font-bold text-center`}
-            >
-              <p>Eski Garage Go-Kart</p>
-              <p>Örnek Mahallesi, Örnek Caddesi No: 555</p>
-              <p>Türkiye</p>
-            </CardContent>
-          </Card>
+          <iframe
+            src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d48747.34798050207!2d32.9905407272316!3d40.215530096847125!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4082142f135edec9%3A0x958e5b7a1264f78!2zw4d1YnVrLCBBbmthcmE!5e0!3m2!1str!2str!4v1752941424869!5m2!1str!2str'
+            width='100%'
+            height='100%'
+            className='border-0'
+            allowFullScreen
+            loading='lazy'
+            referrerPolicy='no-referrer-when-downgrade'
+          ></iframe>
         </motion.div>
 
+        <div className='hidden md:block h-[300px] border-r border-red-600'></div>
+
         <motion.div
-          variants={fadeInRight}
-          initial='hidden'
-          whileInView='visible'
-          viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          className='flex'
+          initial={{ opacity: 0, x: 50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className='flex flex-col items-center gap-8'
         >
-          <Card className='w-full h-full bg-black/10 text-white flex flex-col p-6 items-center justify-center transition duration-300 hover:scale-[1.02] rounded-lg'>
-            <CardTitle
-              className={`${bebas.className} text-red-500 text-4xl text-center animate-pulse`}
-            >
-              İletişim
-            </CardTitle>
-            <CardContent className='flex flex-col gap-3 flex-grow'>
-              <p className='max-w-lg text-lg flex gap-5 items-center'>
-                <WhatsappLogo
-                  className='text-4xl text-red-800'
-                  aria-label='Whatsapp'
-                  role='img'
-                />
-                <Link
-                  href='tel:+905555555555'
-                  className={`${inter.className} text-sm font-bold rounded-lg p-2 bg-red-700 hover:bg-red-800 transition block min-w-[200px] text-center`}
-                >
-                  +90 555 555 55 55
+          <ul className='space-y-6'>
+            <li className='flex items-center gap-6'>
+              <AddressBookIcon size={32} className='text-red-600' />
+              <span
+                className={`${inter.className} text-white/70 hover:text-white transition`}
+              >
+                Eski Garage Go-Kart
+              </span>
+            </li>
+
+            <li className='flex items-center gap-6'>
+              <WhatsappLogo size={32} className='text-red-600' />
+              <Link
+                href='tel:+905555555555'
+                aria-label='Telefon Numarası'
+                className={`${inter.className} text-white/70 hover:text-white transition`}
+              >
+                +90 555 555 55 55
+              </Link>
+            </li>
+
+            <li className='flex items-center gap-6'>
+              <Envelope size={32} className='text-red-600' />
+              <Link
+                href='mailto:ornek@hotmail.com'
+                aria-label='Mail Adresi'
+                className={`${inter.className} text-white/70 hover:text-white transition`}
+              >
+                ornek@hotmail.com
+              </Link>
+            </li>
+          </ul>
+
+          <ul className='flex gap-4 border-y border-white/10 py-4'>
+            {[
+              {
+                href: "#",
+                icon: <FacebookLogo size={28} />,
+                label: "Facebook",
+              },
+              {
+                href: "#",
+                icon: <InstagramLogo size={28} />,
+                label: "Instagram",
+              },
+              { href: "#", icon: <TwitterLogo size={28} />, label: "Twitter" },
+            ].map(({ href, icon, label }, idx) => (
+              <li key={idx} className='group'>
+                <Link href={href} aria-label={label}>
+                  <div className='w-14 h-14 rounded-full bg-neutral-800 flex items-center justify-center transition-all group-hover:bg-white group-hover:scale-110 duration-300'>
+                    <span className='text-white group-hover:text-black transition'>
+                      {icon}
+                    </span>
+                  </div>
                 </Link>
-              </p>
-
-              <p className='max-w-lg text-lg flex gap-5 items-center'>
-                <Envelope
-                  className='text-4xl text-red-800'
-                  aria-label='E-posta'
-                  role='img'
-                />
-                <Link
-                  href='mailto:ornek@hotmail.com'
-                  className={`${inter.className} text-sm font-bold rounded-lg p-2 bg-red-700 hover:bg-red-800 transition block min-w-[200px] text-center`}
-                >
-                  ornek@hotmail.com
-                </Link>
-              </p>
-
-              <h3 className={`${bebas.className} text-red-500 text-2xl mt-6`}>
-                Sosyal Medya
-              </h3>
-              <ul className='flex gap-5 text-4xl items-center'>
-                <li>
-                  <Link href='#' aria-label='Facebook'>
-                    <FacebookLogo className='text-red-800 hover:text-red-600 transition' />
-                  </Link>
-                </li>
-
-                <li>
-                  <Link href='#' aria-label='Instagram'>
-                    <InstagramLogo className='text-red-800 hover:text-red-600 transition' />
-                  </Link>
-                </li>
-
-                <li>
-                  <Link href='#' aria-label='Twitter'>
-                    <TwitterLogo className='text-red-800 hover:text-red-600 transition' />
-                  </Link>
-                </li>
-              </ul>
-            </CardContent>
-          </Card>
+              </li>
+            ))}
+          </ul>
         </motion.div>
       </div>
-    </div>
+    </section>
   );
 }
 
