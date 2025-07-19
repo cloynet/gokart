@@ -70,8 +70,8 @@ function ContactForm() {
         className='bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700 transition'
       >
         Gönder
-        {status && <p className='mt-2- text-sm'> {status} </p>}
       </button>
+      {status && <p className='mt-2 text-sm'> {status} </p>}
     </form>
   );
 }
