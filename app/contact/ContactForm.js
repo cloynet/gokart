@@ -33,7 +33,7 @@ function ContactForm() {
     } else {
       setStatus("Gönderme başarısız");
     }
-  };
+  }; 
 
   return (
     <form
