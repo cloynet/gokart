@@ -41,7 +41,7 @@ function ContactForm() {
   };
 
   return (
-    <div className='flex flex-col items-center mt-10'>
+    <div className='flex flex-col items-center'>
       <h2
         className={`text-red-600 text-4xl md:text-8xl ${bebas.className} text-center`}
       >
