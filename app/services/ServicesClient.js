@@ -4,6 +4,9 @@ import { motion, AnimatePresence } from "framer-motion";
 import React, { useState } from "react";
 import Image from "next/image";
 import image from "@/assets/images/electric/y1.jpeg";
+import image2 from "@/assets/images/electric/c1.jpeg";
+import k1 from "@/assets/images/electric/k1.jpg";
+import m1 from "@/assets/images/electric/m1.jpg";
 import { Bebas_Neue, Inter } from "next/font/google";
 
 const bebas = Bebas_Neue({
@@ -121,7 +124,7 @@ function ServicesClientsPage() {
                 transition={{ duration: 0.5, delay: 0.3 }}
                 viewport={{ once: true }}
               >
-                <Image src={image} alt='image' width={700} height={450} />
+                <Image src={k1} alt='image' width={700} height={450} />
               </motion.div>
             </div>
           </ScrollReveal>
@@ -144,7 +147,7 @@ function ServicesClientsPage() {
                 transition={{ duration: 0.5, delay: 0.4 }}
                 viewport={{ once: true }}
               >
-                <Image src={image} alt='image' width={700} height={450} />
+                <Image src={image2} alt='image' width={700} height={450} />
               </motion.div>
             </div>
           </ScrollReveal>
@@ -169,7 +172,7 @@ function ServicesClientsPage() {
                 transition={{ duration: 0.5, delay: 0.5 }}
                 viewport={{ once: true }}
               >
-                <Image src={image} alt='image' width={700} height={450} />
+                <Image src={m1} alt='image' width={700} height={450} />
               </motion.div>
             </div>
           </ScrollReveal>
