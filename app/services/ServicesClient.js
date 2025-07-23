@@ -26,7 +26,7 @@ const faqs = [
       "Elektrikli go-kartlar çevre dostudur, sıfır emisyon üretir ve çok daha sessiz çalışır. Ayrıca anında tork üretimi sayesinde daha hızlı hızlanırlar. Hem güvenli hem de modern bir sürüş deneyimi sunar.",
   },
   {
-    question: "Sürüş süresi ne kadar",
+    question: "Yaş sınırı var mı?",
     answer:
       "Evet, güvenlik nedeniyle minimum yaş sınırımız 7’dir ve minimum boy sınırı 120 cm’dir. Çocuklar için özel olarak hız limiti düşük araçlarımız da mevcuttur",
   },

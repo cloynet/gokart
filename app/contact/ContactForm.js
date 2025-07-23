@@ -1,8 +1,11 @@
 "use client";
 
 import React, { useState } from "react";
+import ReCAPTCHA from "react-google-recaptcha";
 
 import { Bebas_Neue, Inter } from "next/font/google";
+
+const Rekey = "6Lew9IwrAAAAAFvUEoxcPNGFCmbSBM1NWdAbutrs";
 
 const bebas = Bebas_Neue({ subsets: ["latin"], weight: ["400"] });
 const inter = Inter({ subsets: ["latin"], weight: ["400", "700"] });
@@ -14,6 +17,7 @@ function ContactForm() {
     message: "",
   });
   const [status, setStatus] = useState("");
+  const [recaptchaToken, setRecaptchaToken] = useState("");
 
   const handleChange = (e) => {
     setFormData({
@@ -26,10 +30,18 @@ function ContactForm() {
     e.preventDefault();
     setStatus("Gönderiliyor...");
 
+    if (!recaptchaToken) {
+      setStatus("Lütfen reCAPTCHA doğrulamasını tamamlayın.");
+      return;
+    }
+
     const rest = await fetch("/api/contact", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(formData),
+      body: JSON.stringify({
+        ...formData,
+        recaptchaToken,
+      }),
     });
 
     if (rest.ok) {
@@ -75,6 +87,11 @@ function ContactForm() {
           value={formData.message}
           onChange={handleChange}
           className='w-full p-2 border border-gray-300 rounded h-32'
+        />
+        <ReCAPTCHA
+          sitekey={Rekey}
+          onChange={(token) => setRecaptchaToken(token)}
+          className='w-full'
         />
         <button
           type='submit'
