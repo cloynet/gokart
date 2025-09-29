@@ -21,10 +21,17 @@ This project showcases the **electric go-kart experience** with information like
 
 ## 🛠️ Technologies / Teknolojiler
 
-1. **Next.js**
-2. **React**
-3. **Tailwind CSS**
-4. **Framer Motion**
+Bu proje, modern ve hızlı bir deneyim sunmak için aşağıdaki güçlü araçlarla inşa edilmiştir:
+
+This project is built with the following powerful tools to deliver a modern and fast experience:
+
+| Icon | Technology / Teknoloji | Role / Görev |
+| :---: | :--- | :--- |
+| ⚛️ | **Next.js & React** | Hızlı, ölçeklenebilir ve dinamik arayüzlerin (UI) oluşturulmasını sağlayan temel iskelet. |
+| 💨 | **Tailwind CSS** | Hızlı stil ve tamamen **responsive** tasarım için kullanılan utility-first CSS aracı. |
+| 🎬 | **Framer Motion** | Akıcı sayfa geçişleri, kart ve metin animasyonları, ve MouseTrail efekti gibi **göz alıcı hareketler** eklemek için. |
+| 🌐 | **Google Fonts** | Projenin genel estetiğini ve okunabilirliğini destekleyen optimize edilmiş fontlar. |
+| ⭐ | **Phosphor Icons** | Temiz ve modern bir görünüm sağlayan yüksek kaliteli ikon seti. |
 
 ---
 
