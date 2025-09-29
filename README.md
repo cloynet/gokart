@@ -25,8 +25,6 @@ This project showcases the **electric go-kart experience** with information like
 2. **React**
 3. **Tailwind CSS**
 4. **Framer Motion**
-5. **Google Fonts**
-6. **Phosphor Icons**
 
 ---
 
