@@ -18,21 +18,19 @@ This project showcases the **electric go-kart experience** with information like
 8. 📝 **Contact form** (placeholder) / İletişim Formu (placeholder)
 
 ---
-
 ## 🛠️ Technologies / Teknolojiler
 
 Bu proje, modern ve hızlı bir deneyim sunmak için aşağıdaki güçlü araçlarla inşa edilmiştir:
 
 This project is built with the following powerful tools to deliver a modern and fast experience:
 
-| Icon | Technology / Teknoloji | Role / Görev |
-| :---: | :--- | :--- |
-| ⚛️ | **Next.js & React** | Hızlı, ölçeklenebilir ve dinamik arayüzlerin (UI) oluşturulmasını sağlayan temel iskelet. |
-| 💨 | **Tailwind CSS** | Hızlı stil ve tamamen **responsive** tasarım için kullanılan utility-first CSS aracı. |
-| 🎬 | **Framer Motion** | Akıcı sayfa geçişleri, kart ve metin animasyonları, ve MouseTrail efekti gibi **göz alıcı hareketler** eklemek için. |
-| 🌐 | **Google Fonts** | Projenin genel estetiğini ve okunabilirliğini destekleyen optimize edilmiş fontlar. |
-| ⭐ | **Phosphor Icons** | Temiz ve modern bir görünüm sağlayan yüksek kaliteli ikon seti. |
-
+| Icon | Technology / Teknoloji | Role / Görev (TR) | Role / Görev (EN) |
+| :---: | :--- | :--- | :--- |
+| ⚛️ | **Next.js & React** | Hızlı, ölçeklenebilir ve dinamik arayüzlerin (UI) oluşturulmasını sağlayan temel iskelet. | The core framework for building fast, scalable, and dynamic user interfaces (UI). |
+| 💨 | **Tailwind CSS** | Hızlı stil ve tamamen **responsive** tasarım için kullanılan utility-first CSS aracı. | A utility-first CSS framework used for rapid styling and fully **responsive** design. |
+| 🎬 | **Framer Motion** | Sayfa geçişleri, kart animasyonları ve **MouseTrail efekti** gibi göz alıcı hareketler eklemek için. | Used to add eye-catching motions like page transitions, card animations, and the **MouseTrail effect**. |
+| 🌐 | **Google Fonts** | Projenin genel estetiğini ve okunabilirliğini destekleyen optimize edilmiş fontlar. | Optimized fonts that support the project's overall aesthetic and readability. |
+| ⭐ | **Phosphor Icons** | Temiz ve modern bir görünüm sağlayan yüksek kaliteli ikon seti. | A high-quality icon set providing a clean and modern look. |
 ---
 
 ## ⚡ Setup / Kurulum
